@@ -15,7 +15,7 @@ function App(): React.JSX.Element {
                     <div style={{color: 'red', width: '10px', height: '5px'}}></div>
                 </Col>
                 <Col>
-                <Button onClick={() => console.log("Hello World!")}>Log Hello World</Button>
+                <Button onClick={() => {console.log("Hello World!")}}>Log Hello World</Button>
                     <ul>
                         <li>First thing</li>
                         <li>Another thing</li>
