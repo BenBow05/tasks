@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import { Button } from "react-bootstrap";
+import Form from "react-bootstrap/Form";
 
 export function GiveAttempts(): React.JSX.Element {
     const [attempts, setAttempts] = useState<number>(3);
@@ -8,7 +10,8 @@ export function GiveAttempts(): React.JSX.Element {
         <div>
             <h3>Give Attempts</h3>
             <h1>Remaining Attempts: {attempts}</h1>
-                <input
+            <Form.Group>
+                <Form.Control
                     type="number"
                     value={modifier}
                     onChange={(event: React.ChangeEvent<HTMLInputElement>) =>{
@@ -17,8 +20,10 @@ export function GiveAttempts(): React.JSX.Element {
                         setModifier(value);
                     }}}
                 />
-                <button aria-label="Use" disabled={!attempts} onClick={()=> {setAttempts(attempts-1)}}>Use</button>
-                <button aria-label="Gain" onClick={()=> {setAttempts((attempts+modifier))}}>gain</button>
+                <Button aria-label="Use" disabled={!attempts} onClick={()=> {setAttempts(attempts-1)}}>Use</Button>
+                <Button aria-label="Gain" onClick={()=> {setAttempts((attempts+modifier))}}>gain</Button>
+            </Form.Group>
+                
         </div>
     );
 }
